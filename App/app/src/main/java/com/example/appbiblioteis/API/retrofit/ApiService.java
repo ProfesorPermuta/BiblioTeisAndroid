@@ -5,6 +5,8 @@ import com.example.appbiblioteis.API.models.BookLending;
 import com.example.appbiblioteis.API.models.User;
 
 import java.util.List;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -54,4 +56,6 @@ public interface ApiService {
 
     @PUT("booklending/{id}/return")
     Call<Void> returnBook(@Path("id") int id);
+    @GET("image/{filename}")
+    Call<ResponseBody> getImage(@Path("filename") String fileName);
 }
